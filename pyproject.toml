@@ -7,9 +7,10 @@ dependencies = [
     "selenium",
     "webdriver-manager",
     "pillow",
-    "datasets",
+    "datasets==3.6.0",
     "tqdm",
     "playwright",
+    "wikiextractor",
 ]
 
 [build-system]

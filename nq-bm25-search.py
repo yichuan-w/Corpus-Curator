@@ -1,7 +1,6 @@
 from datasets import load_dataset
 from tqdm import tqdm
-from pyserini.search import LuceneSearcher
-from tqdm import tqdm
+from pyserini.search.lucene import LuceneSearcher
 
 nq = load_dataset("Tevatron/wikipedia-nq")
 
@@ -24,8 +23,6 @@ for example in nq['dev']:
 
 for example in nq['test']:
     queries_ids.append(f'{example["query_id"]}')
-
-from pyserini.search.lucene import LuceneSearcher
 
 searcher = LuceneSearcher("nq-ss-text-pyserini-index")
 
