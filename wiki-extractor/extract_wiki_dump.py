@@ -160,7 +160,7 @@ def parse_extracted_files(extracted_dir: Path, limit: int = None) -> list:
 
 def save_to_jsonl(articles: list, output_path: Path):
     """
-    Save articles to JSONL format compatible with existing code.
+    Save articles to JSONL format.
     
     Args:
         articles: List of article dictionaries
@@ -170,10 +170,11 @@ def save_to_jsonl(articles: list, output_path: Path):
     
     with open(output_path, 'w', encoding='utf-8') as f:
         for article in tqdm(articles, desc="Writing"):
-            # Format compatible with existing code: {"id": "", "contents": "title\ntext"}
+            # Format: {"id": "", "title": "", "text": ""}
             doc = {
                 "id": str(article.get("id", "")),
-                "contents": f"{article.get('title', '')}\n{article.get('text', '')}"
+                "title": article.get("title", ""),
+                "text": article.get("text", "")
             }
             f.write(json.dumps(doc, ensure_ascii=False) + "\n")
     

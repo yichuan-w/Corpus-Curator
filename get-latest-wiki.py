@@ -26,7 +26,7 @@ except Exception as e:
     print("3. Using extract_wiki_titles.py for titles only")
     raise
 
-with open(f"wikipedia-doc-latest-{date}.jsonl", "w") as f:
+with open(f"wikimedia-wikipedia-{date}.jsonl", "w") as f:
     for doc in tqdm(ds, desc="Processing"):
         title = doc["title"]
         text = doc["text"]

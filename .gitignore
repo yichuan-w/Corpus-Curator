@@ -1,3 +1,7 @@
 *.png
 *.log
 *.jsonl
+*.txt
+*.bz2
+*.pyc
+wiki_00
